@@ -1,5 +1,77 @@
+:root {
+  --font-family: "Georgia", sans-serif;
+  --second-family: "Arial", sans-serif;
+  --third-family: "Inter", sans-serif;
+}
+
+:root {
+	--color-light-xl: #fff;
+	--color-light-l: #f6f6f6;
+	--color-light-s: #fafafa;
+	--color-dark-s: #cdcdcd;
+	--color-dark-m: #b2b2b2;
+	--color-dark-l: #545454;
+	--color-dark-xl: #4c4c4c;
+	--color-dark-2xl: #444;
+	--color-dark-3xl: #292929;
+	--color-primary: #f1cdb3;
+	--color-primary-light: #fddcc4;
+	--start-screen-gradient-background: #211f20;
+	--footer-gradient-background: #211f20;
+}
+
 * {
     box-sizing: border-box;
     margin:0;
     padding: 0;
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
+p {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-xl);
+}
+
+section {
+    display: flex;
+    width: 1280 px;
+    padding: 90px 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    justify-content: center;
+
+    background: var(--color-light-xl);
+}
+
+.about .container {
+    gap: 120px;
+}
+
+.about__img {
+    display: flex;
+    justify-content: center;
+}
+
+.about__message {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
