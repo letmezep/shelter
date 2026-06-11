@@ -80,6 +80,12 @@ button {
     background: var(--color-primary);
 }
 
+.wrapper {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*--START SCREEN---------------------------------------------------------------------*/
 
 .start-screen {
@@ -126,11 +132,8 @@ button {
     background: var(--color-light-xl);
 }
 
-.about .container {
-    gap: 120px;
-}
-
 .about__img {
+    margin-right: 120px;
     display: flex;
     justify-content: center;
 }
@@ -140,4 +143,79 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/*--DONATION section---------------------------------------------------------------------*/
+
+.donation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-light-l);
+}
+
+.donation .container {
+    width: 76%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.donation__img {
+    width: 42%;
+}
+
+.donation__message {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;   
+}
+
+.donation__bank {
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 9px;
+
+    display: flex;
+    gap: 15px;    
+
+
+    background: var(--color-primary);
+}
+
+h2 {
+    display: block;
+    width: 80%;
+}
+
+.donation__subheading {
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
+.donation__info {
+    
+    font-family: var(--second-family);
+    font-style: italic;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-dark-m);
+}
+
+.donation__card-numbers {
+    font-family: var(--font-family);
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
