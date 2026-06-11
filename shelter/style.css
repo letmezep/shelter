@@ -184,7 +184,6 @@ button {
     display: flex;
     gap: 15px;    
 
-
     background: var(--color-primary);
 }
 
@@ -218,4 +217,47 @@ h2 {
     line-height: 115%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
+}
+
+/*--DONATION section---------------------------------------------------------------------*/
+
+footer {
+    padding: 40px 40px 0 40px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.footer__contacts,
+.footer__address {
+    width: 25%;
+    height: 80%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer__subheading {
+    font-family: var(--font-family);
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-light-xl);
+}
+
+.footer__link {
+    display: flex;
+    gap: 15px;
+}
+
+.footer__link a {
+    font-family: var(--font-family);
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
 }
