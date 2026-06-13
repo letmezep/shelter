@@ -258,7 +258,6 @@ nav a:hover {
 
 .slider-line {
     width: fit-content;
-    /* width: 100%; */
     display: flex;
     gap: 100px;
     overflow: hidden;
