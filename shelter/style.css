@@ -130,11 +130,10 @@ header {
 }
 
 .header-container {
-    /* padding: 0; */
+    width: 1280px;
     display: flex;
     align-items: center;
     padding: 30px 0 30px 0;
-    /* margin: 0 30px 0 30px; */
 }
 
 .pets-header .logo__title,
@@ -464,16 +463,23 @@ footer {
 
 /*--OUR PETS PAGE-------------------------------------------------------------------------------*/
 
+.our-pets {
+    background: var(--color-light-l);
+}
+
+.header-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .our-pets__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: yellow;
     gap: 45px;
 }
 
 .our-pets__container h2 {
-    /* width: 30%; */
     text-align: center;
 }
 
@@ -483,4 +489,9 @@ footer {
     gap: 30px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
+}
+
+.our-pets__pagination {
+    display: flex;
+    gap: 20px;
 }
