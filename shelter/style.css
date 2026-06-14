@@ -1,6 +1,6 @@
-body {
+/* body {
   overflow-y: hidden;
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -159,7 +159,7 @@ header {
     width: 1280px;
     display: flex;
     align-items: center;
-    padding: 30px 0 30px 0;
+    padding: 30px 40px 30px 40px;
 }
 
 .pets-header .logo__title,
@@ -172,6 +172,7 @@ header {
 .logo {
     display: flex;
     flex-direction: column;
+    /* justify-content: flex-end; */
     gap: 10px;
 }
 
@@ -188,6 +189,7 @@ header {
     font-size: 13px;
     letter-spacing: 0.1em;
     color: var(--color-light-xl);
+    text-align: right;
 }
 
 nav {
@@ -214,8 +216,30 @@ nav a:hover,
     color: var(--color-light-s);
 }
 
+.pets-nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+ 
+    text-decoration-color: var(--color-primary);
+    color: var(--color-dark-3xl);
+}
+
 .active:hover {
     cursor: default;
+}
+
+.pets-active {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+    text-decoration-color: var(--color-primary);
+    cursor: default;
+    color: var(--color-dark-3xl);
+}
+
+.pets-nav a.pets-active:hover {
+    color: var(--color-dark-l);
 }
 
 .hero {
@@ -327,6 +351,10 @@ nav a:hover,
     padding-bottom: 30px;
     border-radius: 9px;
     background: var(--color-light-s);
+}
+
+.pet-card:hover {
+    cursor:pointer;
 }
 
 .pet-card figcaption {
@@ -444,7 +472,9 @@ nav a:hover,
     color: var(--color-dark-m);
 }
 
-.donation__card-numbers {
+.donation__card-numbers,
+.logo-link {
+    text-decoration: none;
     font-family: var(--font-family);
     font-size: 20px;
     line-height: 115%;
@@ -504,6 +534,7 @@ footer .container {
 /*--OUR PETS PAGE-------------------------------------------------------------------------------*/
 
 .our-pets {
+    padding-top: 80px;
     background: var(--color-light-l);
 }
 
@@ -516,7 +547,7 @@ footer .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 45px;
+    gap: 60px;
 }
 
 .our-pets__container h2 {
@@ -524,9 +555,9 @@ footer .container {
 }
 
 .pets-wrapper {
-    width: fit-content;
+    width: 100%;
     display: grid;
-    gap: 30px;
+    gap: 35px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
