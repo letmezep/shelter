@@ -461,3 +461,26 @@ footer {
     letter-spacing: 0.06em;
     color: var(--color-primary);
 }
+
+/*--OUR PETS PAGE-------------------------------------------------------------------------------*/
+
+.our-pets__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: yellow;
+    gap: 45px;
+}
+
+.our-pets__container h2 {
+    /* width: 30%; */
+    text-align: center;
+}
+
+.pets-wrapper {
+    width: fit-content;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
