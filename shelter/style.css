@@ -34,7 +34,7 @@ html {
     padding: 0;
 }
 
-h1 {
+.main-h1 {
     width: 70%;
     font-family: var(--font-family);
     font-weight: 400;
@@ -43,7 +43,11 @@ h1 {
     color: var(--color-light-xl);
 }
 
-h2 {
+
+
+h2,
+.pets-h {
+    text-align: center;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 35px;
