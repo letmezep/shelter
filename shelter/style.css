@@ -359,6 +359,7 @@ nav a:hover,
 
 .pet-card:hover {
     cursor:pointer;
+    background: var(--color-light-xl);
 }
 
 .pet-card figcaption {
@@ -368,6 +369,11 @@ nav a:hover,
     letter-spacing: 0.06em;
     text-align: center;
     color: var(--color-dark-l);
+}
+
+.pet-card:hover .second-button {
+    border: 2px solid var(--color-primary-light);
+    background: var(--color-primary-light);
 }
 
 /*--HELP section---------------------------------------------------------------------*/
