@@ -1,7 +1,3 @@
-/* body {
-  overflow-y: hidden;
-} */
-
 html {
   scroll-behavior: smooth;
 }
@@ -42,8 +38,6 @@ html {
     line-height: 130%;
     color: var(--color-light-xl);
 }
-
-
 
 h2,
 .pets-h {
@@ -95,6 +89,7 @@ button {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
+    transition: background 1s ease;
 }
 
 button:hover {
@@ -118,6 +113,7 @@ button:hover {
     line-height: 130%;
     letter-spacing: 0.06em;
     
+    transition: background 1s ease;
 }
 
 .primary_button:hover {
@@ -326,11 +322,20 @@ nav a:hover,
     text-align: center;
 }
 
-.slide svg:hover {
-    cursor:pointer;
+.slide svg{
     border-radius: 100px;
-    border: none;
-    background: var(--color-primary-light);
+}
+
+.slide .arrow-background {
+    fill: transparent;
+    stroke: var(--color-primary);
+    transition: fill 1s ease, stroke 1s ease;
+}
+
+.slide:hover .arrow-background {
+    cursor:pointer;
+    fill: var(--color-primary-light); 
+    stroke: var(--color-primary-light);
 }
 
 .slider-wrapper {
@@ -355,6 +360,7 @@ nav a:hover,
     padding-bottom: 30px;
     border-radius: 9px;
     background: var(--color-light-s);
+    transition: background 0.8s ease;
 }
 
 .pet-card:hover {
