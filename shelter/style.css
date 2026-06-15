@@ -577,3 +577,7 @@ footer .container {
     display: flex;
     gap: 20px;
 }
+
+.pagination__btn:hover {
+    cursor:pointer;
+}
