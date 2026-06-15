@@ -528,6 +528,7 @@ footer .container {
 }
 
 .footer__link a {
+    text-decoration: none;
     font-family: var(--font-family);
     font-size: 20px;
     line-height: 115%;
