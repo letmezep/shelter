@@ -383,7 +383,8 @@ nav a:hover,
 }
 
 .slider-line {
-  width: fit-content;
+  width: 100%;
+  /* width: fit-content; */
   display: flex;
   gap: 90px;
   overflow: hidden;
@@ -391,7 +392,12 @@ nav a:hover,
   transition: transform 1s linear;
 }
 
+.non-active {
+  display: none;
+}
+
 .pet-card {
+  width: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -625,7 +631,9 @@ footer .container {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1180px) {
+  /* @media screen and (max-width: 1267px) { */
+  /* @media screen and (max-width: 768px) { */
   .section {
     padding-top: 80px;
   }
@@ -687,7 +695,7 @@ footer .container {
   }
 
   .slider-line {
-    gap: 40px;
+    gap: 70px;
   }
 
   .help {
@@ -803,7 +811,8 @@ footer .container {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 700px) { */
   section {
     padding: 0;
   }
@@ -942,7 +951,7 @@ footer .container {
   }
 
   .help__card {
-    gap: 20px;
+    gap: 19px;
   }
 
   .help__card svg {
@@ -1048,8 +1057,58 @@ footer .container {
   .footer__img img {
     width: 100%;
   }
-}
 
-body {
-  overflow-y: hidden;
+  /*--OUR PETS PAGE 320*/
+
+  .header-container {
+    width: 100%;
+    padding-top: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    gap: 7px;
+  }
+
+  .pets-header .burger-btn span,
+  .pets-header .burger-btn::before,
+  .pets-header .burger-btn::after {
+    background-color: #000;
+  }
+
+  .pets-header .burger-btn:hover {
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .our-pets {
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+
+  .our-pets__container {
+    gap: 42px;
+  }
+
+  .pets-h {
+    font-size: 25px;
+  }
+
+  .pets-wrapper {
+    height: 1365px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .pets-wrapper .pet-card figcaption {
+    margin-top: 25px;
+  }
+
+  .our-pets__pagination {
+    gap: 10px;
+  }
 }
