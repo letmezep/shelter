@@ -41,7 +41,7 @@ body {
 
 .main-h1 {
   color: var(--color-light-xl);
-  max-width: 460px;
+  width: 70%;
   font-weight: 400;
   font-size: 44px;
   line-height: 130%;
@@ -71,8 +71,8 @@ section {
 }
 
 .container {
-  max-width: 1280px;
-  width: 100%;
+  width: 1280px;
+  /* width: clamp(320px, 100%, 1280px) */
   margin-left: auto;
   margin-right: auto;
   padding: 0 40px 0 40px;
@@ -224,7 +224,7 @@ header {
 nav {
   display: flex;
   gap: 35px;
-  transition: transform 1s ease;
+  transition: transform 1s easy;
 }
 
 nav a {
@@ -378,12 +378,13 @@ nav a:hover,
 }
 
 .slider-wrapper {
-  width: 990px;
+  width: fit-content;
   overflow: hidden;
 }
 
 .slider-line {
   width: 100%;
+  /* width: fit-content; */
   display: flex;
   gap: 90px;
   overflow: hidden;
@@ -432,7 +433,7 @@ nav a:hover,
 }
 
 .help h2 {
-  max-width: 320px;
+  width: 25%;
   text-align: center;
 }
 
@@ -630,7 +631,9 @@ footer .container {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1267px) {
+@media screen and (max-width: 1180px) {
+  /* @media screen and (max-width: 1267px) { */
+  /* @media screen and (max-width: 768px) { */
   .section {
     padding-top: 80px;
   }
@@ -689,15 +692,10 @@ footer .container {
 
   .slider {
     gap: 10px;
-    justify-content: center;
-  }
-
-  .slider-wrapper {
-    width: 580px;
   }
 
   .slider-line {
-    gap: 40px;
+    gap: 70px;
   }
 
   .help {
@@ -793,7 +791,7 @@ footer .container {
 
   .pets-wrapper {
     overflow: hidden;
-    width: 570px;
+    width: 100%;
     height: 1375px;
     display: grid;
     row-gap: 30px;
@@ -813,7 +811,8 @@ footer .container {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 700px) { */
   section {
     padding: 0;
   }
