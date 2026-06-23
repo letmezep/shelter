@@ -1,7 +1,3 @@
-body {
-  overflow-y: hidden;
-}
-
 :root {
   --font-family: "Georgia", sans-serif;
   --second-family: "Arial", sans-serif;
@@ -195,7 +191,7 @@ header {
   max-width: 1280px;
   display: flex;
   align-items: center;
-  padding: 25px 40px 30px 40px;
+  padding: 30px 40px 30px 40px;
 }
 
 .pets-header .logo__title,
@@ -629,7 +625,7 @@ footer .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 58px;
 }
 
 .our-pets__container h2 {
@@ -639,7 +635,8 @@ footer .container {
 .pets-wrapper {
   width: 100%;
   display: grid;
-  gap: 35px;
+  row-gap: 27px;
+  column-gap: 38px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -653,8 +650,12 @@ footer .container {
   cursor: pointer;
 }
 
+.pets-footer .container {
+  padding-top: 30px;
+}
+
 @media screen and (max-width: 1278px) {
-  .pet-card:last-child {
+  .slider-line .pet-card:last-child {
     display: none;
   }
 
@@ -662,6 +663,18 @@ footer .container {
     width: 100%;
     max-width: 700px;
     gap: calc(100% - 270px - 270px);
+  }
+
+  .pets-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    height: 1375px;
+    display: grid;
+    row-gap: 25px;
+    column-gap: calc(100% - 270px - 270px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
@@ -823,16 +836,17 @@ footer .container {
     padding-right: 95px;
   }
 
-  .pets-wrapper {
+  /* .pets-wrapper {
     overflow: hidden;
     width: 100%;
+    max-width: 700px;
     height: 1375px;
     display: grid;
     row-gap: 30px;
-    column-gap: 40px;
+    column-gap: calc(100% - 270px - 270px);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-  }
+  } */
 
   .our-pets__container {
     display: flex;
@@ -1147,12 +1161,12 @@ footer .container {
     font-size: 25px;
   }
 
-  .pets-wrapper {
+  .our-pets__container .pets-wrapper {
     height: 1365px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 35px;
   }
 
   .pets-wrapper .pet-card figcaption {
@@ -1161,5 +1175,9 @@ footer .container {
 
   .our-pets__pagination {
     gap: 10px;
+  }
+
+  .pets-footer .container {
+    padding-top: 30px;
   }
 }
