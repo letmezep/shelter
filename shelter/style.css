@@ -1,3 +1,7 @@
+body {
+  overflow-y: hidden;
+}
+
 :root {
   --font-family: "Georgia", sans-serif;
   --second-family: "Arial", sans-serif;
@@ -71,8 +75,8 @@ section {
 }
 
 .container {
-  width: 1280px;
-  /* width: clamp(320px, 100%, 1280px) */
+  width: 100%;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 40px 0 40px;
@@ -187,7 +191,8 @@ header {
 }
 
 .header-container {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   display: flex;
   align-items: center;
   padding: 25px 40px 30px 40px;
@@ -200,10 +205,19 @@ header {
   color: var(--color-dark-l);
 }
 
+.logo-link {
+  height: 60px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
 .logo {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
 }
 
 .logo__title {
@@ -223,8 +237,8 @@ header {
 
 nav {
   display: flex;
-  gap: 35px;
-  transition: transform 1s easy;
+  gap: 36px;
+  transition: transform 1s ease;
 }
 
 nav a {
@@ -283,11 +297,11 @@ nav a:hover,
 }
 
 .hero__message {
-  width: 42%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 42px;
-  padding-bottom: 75px;
+  padding-bottom: 80px;
 }
 
 .hero__message p {
@@ -296,6 +310,7 @@ nav a:hover,
 
 .hero__img {
   width: 60%;
+  max-width: 698px;
 }
 
 .hero__img img {
@@ -306,7 +321,7 @@ nav a:hover,
 /*--ABOUT section---------------------------------------------------------------------*/
 
 .about {
-  padding-top: 85px;
+  padding-top: 80px;
   padding-bottom: 95px;
   background: var(--color-light-xl);
 }
@@ -332,7 +347,7 @@ nav a:hover,
   width: 430px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 23px;
 }
 
 /*--SLIDER section---------------------------------------------------------------------*/
@@ -349,7 +364,6 @@ nav a:hover,
 }
 
 .slider-section .container {
-  padding-top: 0;
   flex-direction: column;
   align-items: center;
   gap: 60px;
@@ -378,13 +392,14 @@ nav a:hover,
 }
 
 .slider-wrapper {
-  width: fit-content;
+  width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .slider-line {
   width: 100%;
-  /* width: fit-content; */
   display: flex;
   gap: 90px;
   overflow: hidden;
@@ -402,7 +417,7 @@ nav a:hover,
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding-bottom: 35px;
+  padding-bottom: 33px;
   border-radius: 9px;
   background: var(--color-light-s);
   transition: background 0.8s ease;
@@ -414,7 +429,7 @@ nav a:hover,
 }
 
 .pet-card figcaption {
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 20px;
   letter-spacing: 0.06em;
   text-align: center;
@@ -441,7 +456,7 @@ nav a:hover,
   padding: 0;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 55px;
 }
 
 .help__list {
@@ -449,7 +464,7 @@ nav a:hover,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px 120px;
+  gap: 57px 120px;
 }
 
 .help__card {
@@ -475,7 +490,7 @@ nav a:hover,
 }
 
 .donation__wrapper {
-  width: 75%;
+  width: 76%;
   padding: 0;
   display: flex;
 }
@@ -485,7 +500,7 @@ nav a:hover,
 }
 
 .donation__img {
-  margin-right: 25px;
+  margin-right: 28px;
   display: flex;
   align-items: center;
 }
@@ -494,7 +509,7 @@ nav a:hover,
   display: flex;
   flex-direction: column;
 
-  gap: 20px;
+  gap: 18px;
 }
 
 .donation__bank {
@@ -533,8 +548,7 @@ nav a:hover,
   color: var(--color-dark-m);
 }
 
-.donation__card-numbers,
-.logo-link {
+.donation__card-numbers {
   text-decoration: none;
   font-size: 20px;
   line-height: 115%;
@@ -550,7 +564,7 @@ footer {
 }
 
 footer .container {
-  padding-top: 40px;
+  padding-top: 45px;
   justify-content: space-between;
 }
 
@@ -563,6 +577,14 @@ footer .container {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.footer__contacts {
+  gap: 40px;
+}
+
+.footer__address {
+  gap: 33px;
 }
 
 .footer__subheading {
@@ -631,9 +653,19 @@ footer .container {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1278px) {
+  .pet-card:last-child {
+    display: none;
+  }
+
+  .slider-line {
+    width: 100%;
+    max-width: 700px;
+    gap: calc(100% - 270px - 270px);
+  }
+}
+
 @media screen and (max-width: 1180px) {
-  /* @media screen and (max-width: 1267px) { */
-  /* @media screen and (max-width: 768px) { */
   .section {
     padding-top: 80px;
   }
@@ -643,12 +675,8 @@ footer .container {
     padding: 0 30px 0 30px;
   }
 
-  .logo-link {
-    line-height: 110%;
-  }
-
   .logo {
-    gap: 5px;
+    gap: 8px;
   }
 
   .start-screen .container {
@@ -657,7 +685,7 @@ footer .container {
 
   .hero {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   .hero__message {
@@ -674,7 +702,8 @@ footer .container {
   }
 
   .about {
-    padding-top: 80px;
+    padding-top: 85px;
+    padding-bottom: 105px;
   }
 
   .about .container {
@@ -687,15 +716,16 @@ footer .container {
   }
 
   .slider-section {
+    padding-top: 80px;
     padding-bottom: 105px;
+  }
+
+  .slider-section .container {
+    gap: 58px;
   }
 
   .slider {
     gap: 10px;
-  }
-
-  .slider-line {
-    gap: 70px;
   }
 
   .help {
@@ -703,7 +733,7 @@ footer .container {
   }
 
   .help .container {
-    gap: 55px;
+    gap: 58px;
   }
 
   .help h2 {
@@ -716,6 +746,10 @@ footer .container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 55px;
+  }
+
+  .donation {
+    padding-bottom: 105px;
   }
 
   .donation__wrapper {
@@ -734,7 +768,7 @@ footer .container {
 
   footer .container {
     flex-wrap: wrap;
-    padding-top: 35px;
+    padding-top: 30px;
   }
 
   .footer__contacts,
@@ -748,7 +782,7 @@ footer .container {
   }
 
   .footer__address {
-    gap: 30px;
+    gap: 32px;
   }
 
   .footer__contacts {
@@ -811,8 +845,7 @@ footer .container {
   }
 }
 
-@media screen and (max-width: 768px) {
-  /* @media screen and (max-width: 700px) { */
+@media screen and (max-width: 767px) {
   section {
     padding: 0;
   }
@@ -839,6 +872,10 @@ footer .container {
     font-size: 25px;
     letter-spacing: 0.06em;
     text-align: center;
+  }
+
+  .hero {
+    gap: 30px;
   }
 
   .hero__message {
@@ -888,8 +925,8 @@ footer .container {
   .slider-section,
   .help,
   .donation {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 42px;
+    padding-bottom: 38px;
   }
 
   .slider-section .container {
@@ -920,6 +957,19 @@ footer .container {
     grid-column: 1 / 3;
     grid-row: 1;
     width: 100%;
+  }
+
+  .pet-card:last-child {
+    display: none;
+  }
+
+  .slider-line {
+    width: 100%;
+    max-width: 270px;
+  }
+
+  .pet-card {
+    gap: 27px;
   }
 
   .prev-slide {
@@ -974,7 +1024,7 @@ footer .container {
 
   .donation__wrapper {
     width: 100%;
-    gap: 45px;
+    gap: 40px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -982,6 +1032,7 @@ footer .container {
   .donation__message {
     width: 100%;
     align-items: center;
+    gap: 21px;
   }
 
   .donation-h2 {
