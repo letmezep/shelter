@@ -34,14 +34,25 @@ const burger = document.querySelector(".burger-btn");
 const menu = document.querySelector(".menu");
 const navLinks = document.querySelectorAll(".menu a");
 
-burger.addEventListener("click", () => {
+burger.addEventListener("click", (e) => {
+  e.stopPropagation();
   menu.classList.toggle("open");
   burger.classList.toggle("close");
+  document.body.classList.toggle("lock");
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     menu.classList.toggle("open");
     burger.classList.toggle("close");
+    document.body.classList.toggle("lock");
   });
+});
+
+document.addEventListener("click", (e) => {
+  if (menu.classList.contains("open") && !menu.contains(e.target)) {
+    menu.classList.toggle("open");
+    burger.classList.toggle("close");
+    document.body.classList.toggle("lock");
+  }
 });

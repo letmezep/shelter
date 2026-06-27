@@ -33,6 +33,10 @@ body {
   line-height: 130%;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .wrapper {
   width: 100%;
   margin-left: auto;
