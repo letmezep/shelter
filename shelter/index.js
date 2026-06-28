@@ -2,16 +2,19 @@ const sliderLine = document.querySelector(".slider-line");
 const prevSlide = document.querySelector(".prev-slide");
 const nextSlide = document.querySelector(".next-slide");
 
-let SlideIndex = 0;
+let SlideIndex = 1;
 const SliderLength = document.querySelectorAll(".pet-card").length;
 
 function turnSlide() {
   console.log("SliderLength: ", SliderLength);
+  console.log("SlideIndex: ", SlideIndex);
   sliderLine.style.transform = `translateX(-${SlideIndex * 370}px)`;
 }
 
 prevSlide.addEventListener("click", () => {
+  console.log("SlideIndex1: ", SlideIndex);
   SlideIndex--;
+  console.log("SlideIndex2: ", SlideIndex);
   if (SlideIndex >= 0) {
     turnSlide();
   } else {
