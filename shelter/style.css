@@ -662,6 +662,27 @@ footer .container {
   padding-top: 30px;
 }
 
+.btn-current {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.pagination__btn {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+
 @media screen and (max-width: 1278px) {
   .slider-line {
     width: 100%;
