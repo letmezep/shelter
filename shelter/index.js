@@ -63,11 +63,11 @@ function renderSlider() {
 }
 
 nextSlide.addEventListener("click", () => {
-  if (isAnimating) return;
+  if (isAnimating || !pets.length) return;
 
   isAnimating = true;
 
-  sliderLine.style.transition = "transform .5s ease";
+  sliderLine.style.transition = "transform .8s ease";
   sliderLine.style.transform = "translateX(-100%)";
 
   sliderLine.addEventListener(
@@ -109,4 +109,28 @@ prevSlide.addEventListener("click", () => {
 window.addEventListener("resize", () => {
   visibleCards = getVisibleCards();
   renderSlider();
+});
+
+const burger = document.querySelector(".burger-btn");
+const menu = document.querySelector(".menu");
+const navLinks = document.querySelectorAll(".menu a");
+burger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("open");
+  burger.classList.toggle("close");
+  document.body.classList.toggle("lock");
+});
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    burger.classList.toggle("close");
+    document.body.classList.toggle("lock");
+  });
+});
+document.addEventListener("click", (e) => {
+  if (menu.classList.contains("open") && !menu.contains(e.target)) {
+    menu.classList.toggle("open");
+    burger.classList.toggle("close");
+    document.body.classList.toggle("lock");
+  }
 });
