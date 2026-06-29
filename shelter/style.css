@@ -683,6 +683,15 @@ footer .container {
   border: 2px solid var(--color-primary);
 }
 
+.btn-inactive {
+  color: var(--color-dark-s);
+  border: 2px solid var(--color-dark-s);
+}
+
+.btn-inactive:hover {
+  cursor: default;
+}
+
 @media screen and (max-width: 1278px) {
   .slider-line {
     width: 100%;
