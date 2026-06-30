@@ -52,25 +52,6 @@ if (sliderLine) {
     return 3;
   }
 
-  //   function createPaginationCard(pet) {
-  //     return `
-  // <div class="pet-card">
-
-  //     <figure>
-  //         <img src="${pet.img}" alt="${pet.name}">
-  //         <figcaption>
-  //             ${pet.name}
-  //         </figcaption>
-  //     </figure>
-
-  //     <button class="second-button">
-  //         Learn more
-  //     </button>
-
-  // </div>
-  // `;
-  //   }
-
   function renderSlider() {
     visibleCards = getVisibleCards();
     const cards = [];
@@ -83,6 +64,12 @@ if (sliderLine) {
 
     cards.forEach((pet) => {
       sliderLine.insertAdjacentHTML("beforeend", createCard(pet));
+    });
+
+    sliderLine.querySelectorAll(".pet-card").forEach((card, index) => {
+      card.addEventListener("click", () => {
+        openPopup(cards[index]);
+      });
     });
   }
 
@@ -224,18 +211,36 @@ if (petsWrapper) {
     const end = start + cardsPerPage;
     const pagePets = fullPetsList.slice(start, end);
 
-    petsWrapper.innerHTML = "";
+    petsWrapper.classList.add("fade-out");
 
-    pagePets.forEach((pet) => {
-      petsWrapper.insertAdjacentHTML("beforeend", createPaginationCard(pet));
-    });
+    setTimeout(() => {
+      petsWrapper.innerHTML = "";
 
-    btnFirst.textContent = "<<";
-    btnPrev.textContent = "<";
-    btnCurrent.textContent = currentPage;
-    btnNext.textContent = ">";
-    btnLast.textContent = ">>";
-    updateButtons();
+      pagePets.forEach((pet) => {
+        petsWrapper.insertAdjacentHTML("beforeend", createPaginationCard(pet));
+      });
+
+      petsWrapper.querySelectorAll(".pet-card").forEach((card, index) => {
+        card.addEventListener("click", () => {
+          openPopup(pagePets[index]);
+        });
+      });
+
+      btnFirst.textContent = "<<";
+      btnPrev.textContent = "<";
+      btnCurrent.textContent = currentPage;
+      btnNext.textContent = ">";
+      btnLast.textContent = ">>";
+      updateButtons();
+      updateButtons();
+
+      petsWrapper.classList.remove("fade-out");
+      petsWrapper.classList.add("fade-in");
+
+      setTimeout(() => {
+        petsWrapper.classList.remove("fade-in");
+      }, 400);
+    }, 400);
   }
 
   function updateButtons() {
@@ -286,3 +291,44 @@ if (petsWrapper) {
 
   loadPaginationPets();
 }
+
+const popupOverlay = document.querySelector(".popup-overlay");
+const popupClose = document.querySelector(".popup-close");
+
+function openPopup(pet) {
+  document.querySelector(".popup-image").src = pet.img;
+
+  document.querySelector(".popup-name").textContent = pet.name;
+
+  document.querySelector(".popup-type").textContent =
+    `${pet.type} - ${pet.breed}`;
+
+  document.querySelector(".popup-description").textContent = pet.description;
+
+  document.querySelector(".popup-age").textContent = pet.age;
+
+  document.querySelector(".popup-inoculations").textContent =
+    pet.inoculations.join(", ");
+
+  document.querySelector(".popup-diseases").textContent =
+    pet.diseases.join(", ");
+
+  document.querySelector(".popup-parasites").textContent =
+    pet.parasites.join(", ");
+
+  popupOverlay.classList.add("open");
+  document.body.classList.add("lock");
+}
+
+function closePopup() {
+  popupOverlay.classList.remove("open");
+  document.body.classList.remove("lock");
+}
+
+popupClose.addEventListener("click", closePopup);
+
+popupOverlay.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    closePopup();
+  }
+});

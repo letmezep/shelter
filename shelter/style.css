@@ -647,6 +647,16 @@ footer .container {
   column-gap: 38px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  position: relative;
+  transition: transform 0.8s ease;
+}
+
+.pets-wrapper.fade-out {
+  transform: translateX(-100%);
+}
+
+.pets-wrapper.fade-in {
+  transform: translateX(0);
 }
 
 .our-pets__pagination {
@@ -1227,5 +1237,133 @@ footer .container {
 
   .pets-footer .container {
     padding-top: 30px;
+  }
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(41, 41, 41, 0.6);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.5s;
+
+  z-index: 1000;
+}
+
+.popup-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  width: 900px;
+  height: 500px;
+  position: relative;
+  border-radius: 9px;
+
+  display: flex;
+  gap: 30px;
+  background: #fafafa;
+
+  padding: 20px;
+}
+
+.popup-image {
+  width: 55%;
+  border-radius: 9px;
+}
+
+.popup-name {
+  text-align: left;
+  color: #000;
+}
+
+.popup-content {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.popup-list {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-list li::marker {
+  color: var(--color-primary);
+}
+
+.popup-close {
+  position: absolute;
+
+  top: -50px;
+  right: -50px;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #f1cdb3;
+
+  background: white;
+  cursor: pointer;
+}
+
+.popup-type {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #000;
+}
+
+.popup-description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000;
+}
+
+@media (max-width: 1279px) {
+  .popup {
+    width: 630px;
+    height: 350px;
+  }
+
+  .popup-content {
+    padding-top: 5px;
+    gap: 10px;
+  }
+
+  .popup-image {
+    width: 350px;
+  }
+
+  .popup-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    width: 240px;
+    padding: 10px;
+  }
+
+  .popup-image {
+    display: none;
   }
 }
