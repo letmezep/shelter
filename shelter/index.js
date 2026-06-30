@@ -63,7 +63,7 @@ if (sliderLine) {
     }
 
     cards.forEach((pet) => {
-      sliderLine.insertAdjacentHTML("beforeend", createCard(pet));
+      sliderLine.insertAdjacentHTML("beforeend", createPaginationCard(pet));
     });
 
     sliderLine.querySelectorAll(".pet-card").forEach((card, index) => {
