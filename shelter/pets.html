@@ -28,10 +28,12 @@
                     <span></span>
                 </button>
                 <nav class="pets-nav">
-                    <a href="index.html">About the shelter</a>
-                    <a class="pets-active" href="pets.html">Our pets</a>
-                    <a href="index.html#our-help">Help the shelter</a>
-                    <a href="#contacts">Contacts</a>
+                    <ul class="nav__list">
+                        <li><a href="index.html">About the shelter</a></li>
+                        <li><a class="pets-active" href="pets.html">Our pets</a></li>
+                        <li><a href="index.html#our-help">Help the shelter</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                    </ul>
                 </nav>
             </header>
         </div>
@@ -41,135 +43,25 @@
                 <h1 class="pets-h">Our friends who<br> are looking for a house</h1>
 
                 <div class="pets-wrapper">
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-katrine.png" alt="Katrine">
-
-                            <figcaption>
-                                Katrine
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-jennifer.png" alt="Jennifer">
-
-                            <figcaption>
-                                Jennifer
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-woody.png" alt="Woody">
-
-                            <figcaption>
-                                Woody
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-sophia.png" alt="Sophia">
-
-                            <figcaption>
-                                Sophia
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-timmy.png" alt="Timmy">
-
-                            <figcaption>
-                                Timmy
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-charly.png" alt="Charly">
-
-                            <figcaption>
-                                Charly
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-scarlet.png" alt="Scarlett">
-
-                            <figcaption>
-                                Scarlett
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
-
-                    <div class="pet-card">
-                        <figure>
-                            <img src="./IMG/pets-card/pets-freddie.png" alt="Freddie">
-
-                            <figcaption>
-                                Freddie
-                            </figcaption>
-                        </figure>
-
-                        <button class="second-button">
-                            Learn more
-                        </button>
-                    </div>
 
                 </div>
 
+
                 <div class="our-pets__pagination">
-                    <div class="btn-first btn-inactive">
-                        <img src="./IMG/pagination/button_paginator_inactive_first.svg" alt="button first">
+                    <div class="btn-first pagination__btn btn-inactive">
+
                     </div>
-                    <div class="btn-prev btn-inactive">
-                        <img src="./IMG/pagination/button_paginator_inactive_previos.svg" alt="button previos">
+                    <div class="btn-prev pagination__btn btn-inactive">
+
                     </div>
-                    <div class="btn-active pagination__btn">
-                        <img src="./IMG/pagination/button_paginator_active.svg" alt="button active">
+                    <div class="btn-current btn-active pagination__btn">
+
                     </div>
                     <div class="btn-next pagination__btn">
-                        <img src="./IMG/pagination/button_paginator_next.svg" alt="button next">
+
                     </div>
                     <div class="btn-last pagination__btn">
-                        <img src="./IMG/pagination/button_paginator_last.svg" alt="button last">
+
                     </div>
                 </div>
             </div>
@@ -264,6 +156,35 @@
             </div>
         </footer>
     </div>
+    <div class="popup-overlay">
+        <div class="popup">
+
+            <button class="popup-close">
+                ✕
+            </button>
+
+            <img class="popup-image" src="" alt="pet">
+
+            <div class="popup-content">
+
+                <h2 class="popup-name"></h2>
+
+                <h4 class="popup-type"></h4>
+
+                <p class="popup-description"></p>
+
+                <ul class="popup-list">
+                    <li><b>Age:</b> <span class="popup-age"></span></li>
+                    <li><b>Inoculations:</b> <span class="popup-inoculations"></span></li>
+                    <li><b>Diseases:</b> <span class="popup-diseases"></span></li>
+                    <li><b>Parasites:</b> <span class="popup-parasites"></span></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>
